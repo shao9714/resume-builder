@@ -26,7 +26,7 @@ const SignUp = () => {
           name="login"
           placeholder="password"
         />
-        <input type="submit" class="fadeIn fourth" value="Log In" />
+        <input type="submit" class="fadeIn fourth" value="Sign Up" />
       </form>
 
       <div id="formFooter">
