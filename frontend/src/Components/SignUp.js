@@ -1,6 +1,17 @@
 import React from "react";
+import Axios from "axios";
 
 const SignUp = () => {
+  Axios({
+    method: 'POST',
+    url: "http://localhost:5000/register",
+    headers: {
+      "Content-type": "application/json"
+    }
+  }).then(res => {
+    console.log("Axios res message " + res.data.message);
+  });
+
   return (
     <div>
       <div class="fadeIn first">
@@ -11,7 +22,7 @@ const SignUp = () => {
         />
       </div>
 
-      <form>
+      <form id="register" action="localhost:5000/register" method="post">
         <input
           type="text"
           id="signup"

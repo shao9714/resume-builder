@@ -1,6 +1,17 @@
 import React from "react";
+import Axios from "axios";
 
 const Login = () => {
+  Axios({
+    method: 'POST',
+    url: "http://localhost:5000/login",
+    headers: {
+      "Content-type": "application/json"
+    }
+  }).then(res => {
+    console.log("Axios res message "+ res.data.message);
+  });
+
   return (
     <div>
       <div class="fadeIn first">
@@ -11,7 +22,7 @@ const Login = () => {
         />
       </div>
 
-      <form>
+      <form id="login" action="localhost:5000/login" method="post">
         <input
           type="text"
           id="login"
