@@ -42,7 +42,7 @@ app.use('/register', router);
 app.use('/login', router);
 
 router.get('/', function(req, res, next) {
-    console.log("connected");
+    console.log("API reached!");
     res.send("Api working!");
 });
 

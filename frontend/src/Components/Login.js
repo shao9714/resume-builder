@@ -22,7 +22,7 @@ const Login = () => {
         />
       </div>
 
-      <form id="login" action="localhost:5000/login" method="post">
+      <form>
         <input
           type="text"
           id="login"

@@ -1,11 +1,9 @@
 import "./App.css";
 import Home from "./Components/Home";
 
-// Adding axios
 import Axios from "axios"
 
 function App() {
-  // Adding axios
   Axios({
     method: 'GET',
     url: "http://localhost:5000/",
