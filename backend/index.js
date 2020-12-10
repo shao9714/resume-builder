@@ -44,15 +44,9 @@ app.use("/", router);
 app.use("/register", router);
 app.use("/login", router);
 
-<<<<<<< HEAD
-router.get('/', function(req, res, next) {
-    console.log("API reached!");
-    res.send("Api working!");
-=======
 router.get("/", function (req, res, next) {
   console.log("connected");
   res.send("Api working!");
->>>>>>> 38804ad717c6f44635fa47c151b24f5efab557cc
 });
 
 router.get("/home", function (req, res, next) {
