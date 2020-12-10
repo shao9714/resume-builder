@@ -14,7 +14,6 @@
     "serve": "^11.3.2",
     "web-vitals": "^0.2.4"
   },
-  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -39,9 +38,5 @@
       "last 1 safari version"
     ]
   },
-  
-    "proxy": "http://localhost:5000"
-
- 
-  
+  "proxy": "http://localhost:5000"
 }

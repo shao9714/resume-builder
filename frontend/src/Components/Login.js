@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Axios from "axios";
 
 const Login = () => {
-  Axios({
-    method: 'POST',
-    url: "http://localhost:5000/login",
-    headers: {
-      "Content-type": "application/json"
-    }
-  }).then(res => {
-    console.log("Axios res message "+ res.data.message);
-  });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleClickLogin = () => {
+    Axios({
+      method: "POST",
+      url: "logintest",
+      headers: {
+        "Content-type": "application/json",
+      },
+      data: {
+        email: email,
+        password: password,
+      },
+    }).then((res) => {
+      console.log("Axios res message " + res.data.message);
+    });
+  };
 
   return (
     <div>
@@ -28,7 +37,9 @@ const Login = () => {
           id="login"
           class="fadeIn second"
           name="login"
-          placeholder="login"
+          placeholder="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="text"
@@ -36,8 +47,15 @@ const Login = () => {
           class="fadeIn third"
           name="login"
           placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <input type="submit" class="fadeIn fourth" value="Log In" />
+        <input
+          type="submit"
+          class="fadeIn fourth"
+          value="Log In"
+          onClick={handleClickLogin}
+        />
       </form>
 
       <div id="formFooter">
