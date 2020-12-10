@@ -8,7 +8,7 @@ const Login = () => {
   const handleClickLogin = () => {
     Axios({
       method: "POST",
-      url: "logintest",
+      url: "login",
       headers: {
         "Content-type": "application/json",
       },
