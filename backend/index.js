@@ -46,6 +46,7 @@ app.use("/login", router);
 
 router.get("/", function (req, res, next) {
   console.log("connected");
+
   res.send("Api working!");
 });
 
@@ -68,18 +69,17 @@ router.post("/register", function (req, res, next) {
 
 router.post(
   "/login",
-  passport.authenticate(
-    "local",
-    {
-      successRedirect: "/home",
-      failureRedirect: "/",
-      failureFlash: true,
-    },
-    (req, res) => {
-      console.log("received");
-    }
-  )
+  passport.authenticate("local", {
+    successRedirect: "/home",
+    failureRedirect: "/",
+    failureFlash: true,
+  })
 );
+
+router.post("/logintest", (req, res) => {
+  console.log(req.body.email);
+  console.log(req.body.password);
+});
 
 var port = "5000";
 app.listen(port, () => console.log("App listening on port " + port));

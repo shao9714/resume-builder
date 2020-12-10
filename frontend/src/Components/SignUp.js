@@ -2,23 +2,21 @@ import React from "react";
 import Axios from "axios";
 
 const SignUp = () => {
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
     alert("form submitted");
 
     Axios({
-      method: 'POST',
+      method: "POST",
       url: "http://localhost:5000/register",
       headers: {
-        "Content-type": "application/json"
-      }
-    }).then(res => {
+        "Content-type": "application/json",
+      },
+    }).then((res) => {
       console.log("Axios res message " + res.data.message);
     });
-  }
-  
+  };
 
   return (
     <div>
@@ -35,7 +33,7 @@ const SignUp = () => {
           type="text"
           id="signup"
           class="fadeIn second"
-          name="signup"
+          name="email"
           placeholder="signup"
           value={this.state.name}
         />
