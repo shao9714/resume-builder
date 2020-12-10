@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Axios from "axios";
 
 const SignUp = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -9,9 +12,13 @@ const SignUp = () => {
 
     Axios({
       method: "POST",
-      url: "http://localhost:5000/register",
+      url: "logintest",
       headers: {
         "Content-type": "application/json",
+      },
+      data: {
+        email: email,
+        password: password,
       },
     }).then((res) => {
       console.log("Axios res message " + res.data.message);
@@ -28,14 +35,15 @@ const SignUp = () => {
         />
       </div>
 
-      <form id="register" onSubmit={this.handleSubmit}>
+      <form id="register">
         <input
           type="text"
           id="signup"
           class="fadeIn second"
           name="email"
           placeholder="signup"
-          value={this.state.name}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="text"
@@ -43,9 +51,15 @@ const SignUp = () => {
           class="fadeIn third"
           name="login"
           placeholder="password"
-          value={this.state.password}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <input type="submit" class="fadeIn fourth" value="Sign Up" />
+        <input
+          type="submit"
+          class="fadeIn fourth"
+          value="Sign Up"
+          onClick={handleSubmit}
+        />
       </form>
 
       <div id="formFooter">
