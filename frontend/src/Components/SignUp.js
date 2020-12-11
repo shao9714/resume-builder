@@ -2,20 +2,17 @@ import React, { useState } from "react";
 import Axios from "axios";
 
 const SignUp = () => {
-<<<<<<< HEAD
-=======
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    alert("form submitted");
+    alert("You succesfully registered!");
 
->>>>>>> 2b2c8a1739ee3f92f6c85a6c253f57de0a5241ba
     Axios({
       method: "POST",
-      url: "logintest",
+      url: "register",
       headers: {
         "Content-type": "application/json",
       },
@@ -26,7 +23,7 @@ const SignUp = () => {
     }).then((res) => {
       console.log("Axios res message " + res.data.message);
     });
- 
+  }
 
   return (
     <div>
@@ -44,21 +41,16 @@ const SignUp = () => {
           id="signup"
           class="fadeIn second"
           name="email"
-          placeholder="signup"
-<<<<<<< HEAD
-=======
+          placeholder="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
->>>>>>> 2b2c8a1739ee3f92f6c85a6c253f57de0a5241ba
         />
         <input
           type="text"
           id="password"
           class="fadeIn third"
-          name="login"
+          name="password"
           placeholder="password"
-<<<<<<< HEAD
-=======
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -67,7 +59,6 @@ const SignUp = () => {
           class="fadeIn fourth"
           value="Sign Up"
           onClick={handleSubmit}
->>>>>>> 2b2c8a1739ee3f92f6c85a6c253f57de0a5241ba
         />
       </form>
 

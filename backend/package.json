@@ -20,11 +20,13 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.17.1",
     "flash": "^1.1.0",
+    "fs": "0.0.1-security",
     "method-override": "^3.0.0",
     "morgan": "^1.10.0",
     "morgane": "^1.0.1",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "pdfmake": "^0.1.68",
     "session": "^0.1.0"
   }
 }
